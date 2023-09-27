@@ -19,7 +19,7 @@ public class Vendor
     {
       Description = description;
       Name = name;
-      _instances.add(this);
+      _instances.Add(this);
       Id = _instances.Count;
       Orders = new List<Order>{};
     }

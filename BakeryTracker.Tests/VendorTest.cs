@@ -1,23 +1,23 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
-using ToDoList.Models;
+using BakeryTracker.Models;
 using System;
 
-namespace Vednor.Tests
+namespace BakeryTracker.Tests
 {
   [TestClass]
-  public class ItemVendor : IDisposable
+  public class VendorTests : IDisposable
   {
 
     public void Dispose()
     {
-      Item.ClearAll();
+      Vendor.ClearAll();
     }
 
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
-      Vendor newVendor = new Vendor("description");
+      Vendor newVendor = new Vendor("a great vendor", "Greg");
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
   }
