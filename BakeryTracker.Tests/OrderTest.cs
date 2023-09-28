@@ -17,5 +17,14 @@ namespace BakeryTracker.Tests
       Order newOrder = new Order("title" , "description" , 7, "date");
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
+
+    [TestMethod]
+     public void GetPrice_ReturnsPrice_Int()
+    {
+      int price = 7;
+      Order newOrder = new Order("title", "description", 7, "date");
+      Assert.AreEqual(price, newOrder.Price);
+    }
+
   }
 }
