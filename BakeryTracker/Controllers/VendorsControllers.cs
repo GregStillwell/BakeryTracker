@@ -43,7 +43,7 @@ namespace BakeryTracker.Controllers
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
       Vendor foundVendor = Vendor.Find(vendorId);
-      Order newOrder = new Order(title, description, price, date);
+      Order newOrder = new Order(description, price, title, date);
      // foundVendor.Addorder(newOrder);
       List<Order> vendorOrders = foundVendor.Orders;
       model.Add("orders", vendorOrders);

@@ -14,7 +14,7 @@ namespace BakeryTracker.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstancesOfOrder_Order()
     {
-      Order newOrder = new Order("title" , "description" , 7, "date");
+      Order newOrder = new Order("description" , 7 , "title", "date");
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
@@ -22,7 +22,7 @@ namespace BakeryTracker.Tests
     public void GetDescription_ReturnsDescription_String()
     {
       string description = "new description";
-      Order newOrder = new Order(description, "title", 7, "date");
+      Order newOrder = new Order(description, 7, "title", "date");
       Assert.AreEqual(description, newOrder.Description);
     }
 
@@ -30,16 +30,18 @@ namespace BakeryTracker.Tests
      public void GetPrice_ReturnsPrice_Int()
     {
       int price = 7;
-      Order newOrder = new Order("description", "title",  7, "date");
+      Order newOrder = new Order("description", 7,  "title", "date");
       Assert.AreEqual(price, newOrder.Price);
     }
 
-    public void GetTitle_ReturnsTitle_String()
-    {
-      string title = "new title";
-      Order newOrder = new Order(title, "description", 9, "date");
-      Assert.AreEqual(title, newOrder.Title);
-    }
+     [TestMethod]
+     public void GetTitle_ReturnsTitle_String()
+     {
+       string title = "new title";
+       Order newOrder = new Order("description", 7, title, "date");
+       Assert.AreEqual(title, newOrder.Title);
+     }
+     
    
   }
 }
