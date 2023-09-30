@@ -34,7 +34,12 @@ namespace BakeryTracker.Tests
       Assert.AreEqual(price, newOrder.Price);
     }
 
-    
+    public void GetTitle_ReturnsTitle_String()
+    {
+      string title = "new title";
+      Order newOrder = new Order(title, "description", 9, "date");
+      Assert.AreEqual(title, newOrder.Title);
+    }
    
   }
 }
