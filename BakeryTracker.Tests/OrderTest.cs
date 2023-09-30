@@ -19,12 +19,22 @@ namespace BakeryTracker.Tests
     }
 
     [TestMethod]
+    public void GetDescription_ReturnsDescription_String()
+    {
+      string description = "new description";
+      Order newOrder = new Order(description, "title", 7, "date");
+      Assert.AreEqual(description, newOrder.Description);
+    }
+
+    [TestMethod]
      public void GetPrice_ReturnsPrice_Int()
     {
       int price = 7;
-      Order newOrder = new Order("title", "description", 7, "date");
+      Order newOrder = new Order("description", "title",  7, "date");
       Assert.AreEqual(price, newOrder.Price);
     }
 
+    
+   
   }
 }
