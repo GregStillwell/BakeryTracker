@@ -59,6 +59,15 @@ namespace BakeryTracker.Tests
       int result = newOrder.Id;
       Assert.AreEqual(1, result);
     }
+    [TestMethod]
+    public void Find_ReturnsOrder_Order()
+    {
+      
+      Order newOrder1 = new Order("description", 7, "title", "date");
+      Order newOrder2 = new Order("description", 14,"title", "date");
+      Assert.AreEqual(newOrder2, Order.Find(2));
+    }
+
 
   }
 }

@@ -20,5 +20,9 @@ namespace BakeryTracker.Tests
       Vendor newVendor = new Vendor("a great vendor", "Greg");
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
+
+    
+
+
   }
 }
