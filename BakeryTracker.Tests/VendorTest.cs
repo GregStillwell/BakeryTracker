@@ -72,5 +72,22 @@ namespace BakeryTracker.Tests
       Assert.AreEqual(newVendor2, Vendor.Find(2));
     }
 
+    [TestMethod]
+    public void AddOrder_OrderWithVendor_OrderList()
+    {
+      string description1 = "a great vendor";
+      string name = "Greg";
+      Vendor newVendor = new Vendor(description1, name);
+      string title = "new title";
+      string description2 = "new description";
+      int price = 7;
+      string date = ("2020, 7, 1");
+      Order newOrder = new Order(description2, price, title, date);
+      List<Order> newList = new List<Order> { newOrder };
+      newVendor.AddOrder(newOrder);
+      List<Order> result = newVendor.Orders;
+      CollectionAssert.AreEqual(newList, result);
+    }
+
   }
 }
