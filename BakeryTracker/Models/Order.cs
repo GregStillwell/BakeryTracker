@@ -7,17 +7,17 @@ namespace BakeryTracker.Models
   public class Order
   {
     public string Description {get; set;  }
-    public int Price  {get; set;  }
     public string Title  {get; set;  }
+    public int Price  {get; set;  }
     public string Date {get; set; }
     private static int _idCounter = 0;
     public static List<Order> _instances = new List<Order> {};
     public int Id { get; }
-    public Order(string description, int price, string title, string date)
+    public Order(string description, string title, int price, string date)
     {
       Description = description;
-      Price = price;
       Title = title;
+      Price = price;
       Date = date;
       _idCounter++;
       Id = _idCounter;

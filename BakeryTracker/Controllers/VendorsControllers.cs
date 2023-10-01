@@ -27,7 +27,7 @@ namespace BakeryTracker.Controllers
       return RedirectToAction("Index");
     }
 
-    [HttpGet("/vendors/{vendorId}/")]
+    [HttpGet("/vendors/{Id}/")]
     public ActionResult Show(int Id)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
@@ -39,11 +39,11 @@ namespace BakeryTracker.Controllers
     }
 
     [HttpPost("/vendors/{vendorId}/orders")]
-    public ActionResult Create(int vendorId, string description, int price, string title , string date)
+    public ActionResult Create(int vendorId, string description, string title, int price , string date)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
       Vendor foundVendor = Vendor.Find(vendorId);
-      Order newOrder = new Order(description, price, title, date);
+      Order newOrder = new Order(description, title, price, date);
       foundVendor.AddOrder(newOrder);
       List<Order> vendorOrders = foundVendor.Orders;
       model.Add("orders", vendorOrders);

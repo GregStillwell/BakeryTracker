@@ -82,12 +82,11 @@ namespace BakeryTracker.Tests
       string description2 = "new description";
       int price = 7;
       string date = ("2020, 7, 1");
-      Order newOrder = new Order(description2, price, title, date);
+      Order newOrder = new Order(description2, title, price, date);
       List<Order> newList = new List<Order> { newOrder };
       newVendor.AddOrder(newOrder);
       List<Order> result = newVendor.Orders;
       CollectionAssert.AreEqual(newList, result);
     }
-
   }
 }
