@@ -41,7 +41,12 @@ namespace BakeryTracker.Tests
        Order newOrder = new Order("description", 7, title, "date");
        Assert.AreEqual(title, newOrder.Title);
      }
-     
-   
+     [TestMethod]
+      public void GetDate_ReturnsDate_Date()
+    {
+      string date = ("2020, 5,1");
+      Order newOrder = new Order("description",7 ,"title" , date);
+      Assert.AreEqual(date, newOrder.Date);
+    }
   }
 }
