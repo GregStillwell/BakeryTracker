@@ -33,10 +33,19 @@ namespace BakeryTracker.Tests
     [TestMethod]
     public void GetName_ReturnsName_String()
     {
-      string name = "a great vendor";
-      string description = "Greg";
+      string name = "Greg";
+      string description = "a great vendor";
       Vendor newVendor = new Vendor(description, name);
       Assert.AreEqual(name, newVendor.Name);
+    }
+      [TestMethod]
+     public void GetId_ReturnsId_Int()
+     {
+      string description = "a great vendor";
+      string name = "Greg";
+      Vendor newVendor = new Vendor(description, name);
+      int result = newVendor.Id;
+      Assert.AreEqual(1, result);
     }
 
   }
