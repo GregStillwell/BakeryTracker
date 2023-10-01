@@ -21,13 +21,13 @@ namespace BakeryTracker.Controllers
     }  
 
     [HttpPost("/vendors")]
-    public ActionResult Index(string name, string description)
+    public ActionResult Index(string description, string name)
     {
-      Vendor newVendor = new Vendor(name, description);
+      Vendor newVendor = new Vendor(description, name);
       return RedirectToAction("Index");
     }
 
-    [HttpGet("/vendors/{vendorId}")]
+    [HttpGet("/vendors/{id}")]
     public ActionResult Show(int id)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
@@ -44,7 +44,7 @@ namespace BakeryTracker.Controllers
       Dictionary<string, object> model = new Dictionary<string, object>();
       Vendor foundVendor = Vendor.Find(vendorId);
       Order newOrder = new Order(description, price, title, date);
-      //foundVendor.Addorder(newOrder);
+      foundVendor.AddOrder(newOrder);
       List<Order> vendorOrders = foundVendor.Orders;
       model.Add("orders", vendorOrders);
       model.Add("vendor", foundVendor);

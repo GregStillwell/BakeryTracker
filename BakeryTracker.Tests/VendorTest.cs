@@ -60,5 +60,17 @@ namespace BakeryTracker.Tests
       CollectionAssert.AreEqual(newList, Vendor.GetAll());
     }
 
+    [TestMethod]
+    public void Find_ReturnsVendor_Vendor()
+    {
+      string description1 = "a great vendor";
+      string name1 = "Greg";
+      string description2 = "a great vendor";
+      string name2 = "Greg";
+      Vendor newVendor1 = new Vendor(description1, name1);
+      Vendor newVendor2 = new Vendor(description2, name2);
+      Assert.AreEqual(newVendor2, Vendor.Find(2));
+    }
+
   }
 }
