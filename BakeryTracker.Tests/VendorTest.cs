@@ -40,12 +40,24 @@ namespace BakeryTracker.Tests
     }
       [TestMethod]
      public void GetId_ReturnsId_Int()
-     {
+    {
       string description = "a great vendor";
       string name = "Greg";
       Vendor newVendor = new Vendor(description, name);
       int result = newVendor.Id;
       Assert.AreEqual(1, result);
+    }
+    [TestMethod]
+    public void GetAll_ReturnsAllVendorObjects_List()
+    {
+      string description1 = "a great vendor";
+      string name1 = "Greg";
+      string description2 = "a great vendor";
+      string name2 = "Greg";
+      Vendor newVendor1 = new Vendor(description1, name1);
+      Vendor newVendor2 = new Vendor(description2, name2);
+      List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2 };
+      CollectionAssert.AreEqual(newList, Vendor.GetAll());
     }
 
   }
