@@ -8,9 +8,13 @@ namespace BakeryTracker.Tests
 {
 
   [TestClass]
-  public class OrderTests
+  public class OrderTests : IDisposable
   {
 
+    public void Dispose()
+    {
+      Order.ClearAll();
+    }
     [TestMethod]
     public void OrderConstructor_CreatesInstancesOfOrder_Order()
     {
@@ -44,7 +48,7 @@ namespace BakeryTracker.Tests
      [TestMethod]
       public void GetDate_ReturnsDate_Date()
     {
-      string date = ("2020, 5,1");
+      string date = ("2020, 7,1");
       Order newOrder = new Order("description",7 ,"title" , date);
       Assert.AreEqual(date, newOrder.Date);
     }
